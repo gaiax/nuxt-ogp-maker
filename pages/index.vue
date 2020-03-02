@@ -85,8 +85,8 @@ export default {
                 ctx.fillRect(40, 0, 40, 240);
                 ctx.fillRect(240, 0, 40, 240);
                 ctx.fillStyle = "rgb(128, 255, 255)";
-                ctx.font = "48pt sans-serif";
-                ctx.fillText("Hello World", 400, 200);
+                ctx.font = "24pt sans-serif";
+                ctx.fillText(this.msg, 400, 200);
                 successCallback(canvas.toDataURL());
             };
             image.onerror = e => {
