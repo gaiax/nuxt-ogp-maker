@@ -12,24 +12,9 @@
                     class="button--grey"
                 >GitHub</a>
             </div>
-            <div class="hello">
+            <div class="links">
                 <input v-model="msg" type="text" />
-                <button @click="create">create</button>
-                <p></p>
-                <svg ref="svgCard">
-                    <rect x="0" y="0" width="1200" height="30" fill="#f2f6f7" />
-                    <rect x="0" y="300" width="1200" height="330" fill="#f2c502" />
-                    <text
-                        transform="translate(103.29 347.281)"
-                        fill="#f47603"
-                        font-size="29"
-                        font-family="noto Sans"
-                        letter-spacing="-0.002em"
-                    >
-                        <tspan x="0" y="26">{{ msg }}</tspan>
-                    </text>
-                </svg>
-                <canvas id="cv1" width="1200" height="630"></canvas>
+                <button class="button--grey" @click="create">create</button>
             </div>
         </div>
     </div>
@@ -52,7 +37,7 @@ export default {
     methods: {
         create: function() {
             // refでsvgCardをsvgに設定しているのでthis.$refs.svgCardで要素を取れます
-            this.svg2imageData(this.$refs.svgCard, data => {
+            this.svg2imageData(data => {
                 const sRef = firebase.storage().ref();
                 const fileRef = sRef.child(`${this.uuid}.png`);
                 // Cloud Storageにアップロード
@@ -69,7 +54,7 @@ export default {
                     });
             });
         },
-        svg2imageData: function(svgElement, successCallback, errorCallback) {
+        svg2imageData: function(successCallback, errorCallback) {
             var canvas = document.createElement("canvas");
             canvas.width = 1200;
             canvas.height = 630;
