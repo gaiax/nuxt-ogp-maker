@@ -1,0 +1,19 @@
+{
+  "name": "nuxt-ogp-maker",
+  "version": "1.0.0",
+  "description": "My astounding Nuxt.js project",
+  "author": "Aram Mine",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "core-js": "2.6.11",
+    "firebase": "7.9.3",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {}
+}
